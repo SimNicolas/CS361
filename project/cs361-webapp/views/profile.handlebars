@@ -1,0 +1,34 @@
+{{> navbar}}
+
+
+<div class="container-fluid" id="editBook">
+
+	<h3 id='heading'> You would like to edit {{this.title}}? </h3>
+
+	<h3> USERNAME:  {{this.username}}</h3>
+
+	<form class="editForm" method="POST" action="/profileEdit">
+				
+				<input type="hidden" value="{{this.id}}"" name="id">
+
+				<p class="field">
+					<input type="text" name="userName" value="{{this.username}}" required>
+				</p>
+
+	<h3> EMAIL ADDRESS: {{this.email}} </h3>
+				<p class="field">
+					<input type="email" name="email" value="{{this.email}}" required>
+				</p>
+
+	<h3> PASSWORD </h3>
+				<p class="field">
+					<input type="password" name="password" value="{{this.pword}}" required>
+				</p>
+
+		<button class="btn-sm btn-submit" type="submit" id="update">Update Information</button>
+	</form>
+
+	<a href="/employee-home">Employee Dashboard</a><br>
+	<a href="/hr-home">HR Dashboard</a>
+
+</div>
